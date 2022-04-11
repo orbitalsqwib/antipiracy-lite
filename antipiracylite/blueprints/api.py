@@ -1,8 +1,9 @@
+import os
 from flask import Blueprint
 from antipiracylite.modules.productLedger import ProductLedger
 api = Blueprint('api', __name__, template_folder='templates')
 
-pL = ProductLedger()
+pL = ProductLedger(f'{os.getcwd()}/db.txt')
 
 @api.route('/ping')
 def testAPI():

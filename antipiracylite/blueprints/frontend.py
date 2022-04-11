@@ -16,7 +16,7 @@ def testLicenseForm():
         if 'Product_L' in request.form and 'MAC' in request.form:
             licenseStr = request.form['Product_L']
             macAddr = request.form['MAC']
-            result = pL.checkLicenseValid(licenseStr=licenseStr, macAddr=macAddr)
+            result = pL.checkLicenseValid(licenseId=licenseStr, macAddr=macAddr)
 
             return render_template('antipiracy_frontend_result.html', result=result)
 
